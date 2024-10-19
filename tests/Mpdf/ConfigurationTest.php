@@ -46,8 +46,16 @@ class ConfigurationTest extends \Yoast\PHPUnitPolyfills\TestCases\TestCase
 
 	public function testFontSettingsWithDefaults()
 	{
-		$defaultFontConfig = (new Config\FontVariables())->getDefaults();
-		$fontData = $defaultFontConfig['fontdata'];
+		$fontData = [
+		"dejavusanscondensed" => [
+			'R' => "DejaVuSansCondensed.ttf",
+			'B' => "DejaVuSansCondensed-Bold.ttf",
+			'I' => "DejaVuSansCondensed-Oblique.ttf",
+			'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
+			'useOTL' => 0xFF,
+			'useKashida' => 75,
+		],
+		];
 
 		$mpdf = new Mpdf([
 			'fontDir' => [

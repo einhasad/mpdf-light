@@ -28,6 +28,16 @@ class Issue890Test extends \Mpdf\BaseMpdfTest
 		$this->mpdf = new Mpdf([
 			'useSubstitutions' => true,
 			'biDirectional' => true,
+            'fontdata' => [
+                "dejavusanscondensed" => [
+                    'R' => "DejaVuSansCondensed.ttf",
+                    'B' => "DejaVuSansCondensed-Bold.ttf",
+                    'I' => "DejaVuSansCondensed-Oblique.ttf",
+                    'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
+                    'useOTL' => 0xFF,
+                    'useKashida' => 75,
+                ],
+            ]
 		]);
 	}
 

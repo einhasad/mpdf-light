@@ -14,7 +14,29 @@ class AddFontTest extends \Yoast\PHPUnitPolyfills\TestCases\TestCase
 	{
 		parent::set_up();
 
-		$this->mpdf = new Mpdf();
+		$this->mpdf = new Mpdf(
+			[
+				'fontdata' => [
+					"dejavusanscondensed" => [
+						'R' => "DejaVuSansCondensed.ttf",
+						'B' => "DejaVuSansCondensed-Bold.ttf",
+						'I' => "DejaVuSansCondensed-Oblique.ttf",
+						'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
+						'useOTL' => 0xFF,
+						'useKashida' => 75,
+					],
+					"sun-exta" => [
+						'R' => "Sun-ExtA.ttf",
+					],
+					"dejavuserifcondensed" => [
+						'R' => "DejaVuSerifCondensed.ttf",
+						'B' => "DejaVuSerifCondensed-Bold.ttf",
+						'I' => "DejaVuSerifCondensed-Italic.ttf",
+						'BI' => "DejaVuSerifCondensed-BoldItalic.ttf",
+					],
+				],
+			]
+		);
 	}
 
 	public function testAddFont()
@@ -82,7 +104,20 @@ class AddFontTest extends \Yoast\PHPUnitPolyfills\TestCases\TestCase
 		$fontName = 'dejavusanscondensed';
 		$this->mpdf->AddFont($fontName);
 
-		$this->mpdf = new Mpdf();
+		$this->mpdf = new Mpdf(
+			[
+				'fontdata' => [
+					"dejavusanscondensed" => [
+						'R' => "DejaVuSansCondensed.ttf",
+						'B' => "DejaVuSansCondensed-Bold.ttf",
+						'I' => "DejaVuSansCondensed-Oblique.ttf",
+						'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
+						'useOTL' => 0xFF,
+						'useKashida' => 75,
+					],
+				],
+			]
+		);
 		$this->mpdf->AddFont($fontName);
 
 		$this->ttfAssertions($this->mpdf->fonts[$fontName]);

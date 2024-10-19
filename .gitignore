@@ -1,2 +1,5 @@
 vendor/*
 composer.lock
+.idea
+tests/Mpdf/tmp/*
+.phpunit.result.cache

@@ -1,4 +1,5 @@
-mPDF is a PHP library which generates PDF files from UTF-8 encoded HTML.
+Light mPDF  is fork mpdf/mpdf without fonts. Light mPDF size is ~7MB, mpdf/mpdf size is ~95MB.
+
 
 It is based on [FPDF](http://www.fpdf.org/) and [HTML2FPDF](http://html2fpdf.sourceforge.net/)
 (see [CREDITS](CREDITS.txt)), with a number of enhancements. mPDF was written by Ian Back and is released
@@ -63,7 +64,22 @@ The simplest usage (since version 7.0) of the library would be as follows:
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$mpdf = new \Mpdf\Mpdf();
+$options = [
+
+            'fontDir' => [__DIR__ . '/fonts/'],
+            'fontdata' => [
+                'pdfcustom' => [
+                    'R' => 'Arial.ttf',
+                    'I' => 'Arial-Italic.ttf',
+                    'B' => 'Arial-Bold.ttf',
+                ],
+            ],
+            'sans_fonts' => ['pdfcustom'],
+            'serif_fonts' => ['pdfcustom'],
+            'mono_fonts' => ['pdfcustom'],
+            // other options
+        ];
+$mpdf = new \Mpdf\Mpdf($options);
 $mpdf->WriteHTML('<h1>Hello world!</h1>');
 $mpdf->Output();
 
