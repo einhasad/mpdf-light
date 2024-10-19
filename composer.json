@@ -1,5 +1,5 @@
 {
-	"name": "mpdf/mpdf-light",
+	"name": "einhasad/mpdf-light",
 	"type": "library",
 	"description": "Lightweight mPDF fork without font subsetting",
 	"keywords": ["mpdf", "php", "pdf", "utf-8", "nofont" , "ligth", "minimal", "lightweight", "simple"],
