@@ -1,8 +1,14 @@
 # Don't include these files and directories when exporting archives
 *.gitattributes export-ignore
 /utils export-ignore
+/.github export-ignore
 /tests export-ignore
 /ttfonts export-ignore
+/CHANGELOG.md export-ignore
+/CREDITS.txt export-ignore
+/phpunit.xml export-ignore
+/composer.lock export-ignore
+/ruleset.xml export-ignore
 
 # Set the default behavior, in case people don't have core.autocrlf set.
 * text=auto
