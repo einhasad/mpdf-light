@@ -1,57 +1,26 @@
-Light mPDF  is fork mpdf/mpdf without fonts. Light mPDF size is ~7MB, mpdf/mpdf size is ~95MB.
+Light mPDF
 
+Light mPDF is a lightweight fork of mpdf/mpdf that comes without bundled fonts. By excluding the fonts, the package size is significantly reduced from approximately 95 MB to just 7 MB. This makes Light mPDF ideal for projects that don’t require the default fonts and prefer a smaller footprint.
 
 It is based on [FPDF](http://www.fpdf.org/) and [HTML2FPDF](http://html2fpdf.sourceforge.net/)
 (see [CREDITS](CREDITS.txt)), with a number of enhancements. mPDF was written by Ian Back and is released
 under the [GNU GPL v2 licence](LICENSE.txt).
 
-[![Latest Stable Version](https://poser.pugx.org/mpdf/mpdf/v/stable)](https://packagist.org/packages/mpdf/mpdf)
-[![Total Downloads](https://poser.pugx.org/mpdf/mpdf/downloads)](https://packagist.org/packages/mpdf/mpdf)
-[![License](https://poser.pugx.org/mpdf/mpdf/license)](https://packagist.org/packages/mpdf/mpdf)
+[![Latest Stable Version](https://poser.pugx.org/einhasad/mpdf-light/v/stable)](https://packagist.org/packages/einhasad/mpdf-light)
+[![Total Downloads](https://poser.pugx.org/einhasad/mpdf-light/downloads)](https://packagist.org/packages/einhasad/mpdf-light)
+[![License](https://poser.pugx.org/einhasad/mpdf-light/license)](https://packagist.org/packages/einhasad/mpdf-light)
 
 
 > ⚠ If you are viewing this file on mPDF GitHub repository homepage or on Packagist, please note that
 > the default repository branch is `development` which can differ from the last stable release.
 
-Requirements
-============
-
-PHP versions and extensions
----------------------------
-
-- `PHP >=5.6 <7.3.0` is supported for `mPDF >= 7.0`
-- `PHP 7.3` is supported since `mPDF v7.1.7`
-- `PHP 7.4` is supported since `mPDF v8.0.4`
-- `PHP 8.0` is supported since `mPDF v8.0.10`
-- `PHP 8.1` is supported as of `mPDF v8.0.13`
-- `PHP 8.2` is supported as of `mPDF v8.1.3`
-- `PHP 8.3` is supported as of `mPDF v8.2.1`
-
-PHP `mbstring` and `gd` extensions have to be loaded.
-
-Additional extensions may be required for some advanced features such as `zlib` for compression of output and
-embedded resources such as fonts, `bcmath` for generating barcodes or `xml` for character set conversion
-and SVG handling.
-
-Known server caveats
---------------------
-
-mPDF has some problems with fetching external HTTP resources with single threaded servers such as `php -S`. A proper
-server such as nginx (php-fpm) or Apache is recommended.
-
-Support us
-==========
-
-Consider supporting development of mPDF with a donation of any value. [Donation button][1] can be found on the
-[main page of the documentation][1].
-
 Installation
 ============
 
-Official installation method is via composer and its packagist package [mpdf/mpdf](https://packagist.org/packages/mpdf/mpdf).
+Official installation method is via composer and its packagist package [einhasad/mpdf-light](https://packagist.org/packages/einhasad/mpdf-light).
 
 ```
-$ composer require mpdf/mpdf
+$ composer require einhasad/mpdf-light
 ```
 
 Usage
@@ -86,6 +55,23 @@ $mpdf->Output();
 ```
 
 This will output the PDF inline to the browser as `application/pdf` Content-type.
+Requirements
+============
+
+PHP extensions
+---------------------------
+
+PHP `mbstring` and `gd` extensions have to be loaded.
+
+Additional extensions may be required for some advanced features such as `zlib` for compression of output and
+embedded resources such as fonts, `bcmath` for generating barcodes or `xml` for character set conversion
+and SVG handling.
+
+Known server caveats
+--------------------
+
+mPDF has some problems with fetching external HTTP resources with single threaded servers such as `php -S`. A proper
+server such as nginx (php-fpm) or Apache is recommended.
 
 Setup & Configuration
 =====================
@@ -139,14 +125,14 @@ Online manual is available at https://mpdf.github.io/.
 General troubleshooting
 =============
 
-For general questions or troubleshooting please use [Discussions](https://github.com/mpdf/mpdf/discussions).
+For general questions or troubleshooting please use [Discussions](https://github.com/einhasad/mpdf-light/discussions).
 
 You can also use the [mpdf tag](https://stackoverflow.com/questions/tagged/mpdf) at Stack Overflow as the StackOverflow user base is more likely to answer you in a timely manner.
 
 Contributing
 ============
 
-Before submitting issues and pull requests please read the [CONTRIBUTING.md](https://github.com/mpdf/mpdf/blob/development/.github/CONTRIBUTING.md) file.
+Before submitting issues and pull requests please read the [CONTRIBUTING.md](https://github.com/einhasad/mpdf-light/blob/development/.github/CONTRIBUTING.md) file.
 
 Unit Testing
 ============
